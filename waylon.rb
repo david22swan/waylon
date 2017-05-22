@@ -15,6 +15,8 @@ class Waylon < Sinatra::Application
   require 'waylon/version'
   include Deterministic
 
+  set :protection, :except => :frame_options
+
   helpers do
     # Read configuration in from YAML
     def gen_config
